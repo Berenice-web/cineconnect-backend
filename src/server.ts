@@ -15,9 +15,6 @@ app.get("/api-docs.json", (req, res) => {
 const httpServer = createServer(app);
 initWebSocket(httpServer);
 
-httpServer.listen(PORT, () => {
-  console.log(`Backend CineConnect démarré sur http://localhost:${PORT}`);
-  console.log(
-    `Documentation API disponible sur http://localhost:${PORT}/api-docs`,
-  );
+httpServer.listen(PORT, "0.0.0.0",() => {
+  console.log(`Backend CineConnect démarré sur ${PORT}`);
 });
