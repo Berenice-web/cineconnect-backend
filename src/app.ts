@@ -1,7 +1,14 @@
+import "dotenv/config";
+import express from "express";
+import cors from "cors";
+import { router } from "./routes/router";
+
+const app = express();
+
 const allowedOrigins = [
   "http://localhost:5173",
   process.env.FRONTEND_ORIGIN,
-];
+].filter(Boolean) as string[];
 
 app.use(
   cors({
@@ -13,5 +20,10 @@ app.use(
       }
     },
     credentials: true,
-  })
+  }),
 );
+
+app.use(express.json());
+app.use(router);
+
+export { app };
