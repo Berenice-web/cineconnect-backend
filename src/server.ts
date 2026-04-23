@@ -16,5 +16,5 @@ const httpServer = createServer(app);
 initWebSocket(httpServer);
 
 httpServer.listen(PORT, "0.0.0.0", () => {
-  console.log(`Backend CineConnect démarré sur port ${PORT}`);
+  console.log(`Backend Cineconnect démarré sur port ${PORT}`);
 });
