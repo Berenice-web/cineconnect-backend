@@ -1,3 +1,4 @@
+# rebuild force
 FROM node:24-alpine
 
 RUN corepack enable
